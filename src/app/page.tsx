@@ -22,6 +22,8 @@ function page() {
       <Technology/>
       <Faq/>
       <Testimonials/>
+
+
     </div>
   )
 }

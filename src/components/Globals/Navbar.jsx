@@ -87,9 +87,11 @@ return (
                         </div>
                     </div>
 
-                    <div className="hidden md:block">
+                    <Link href="/contact">
+                    <div className="hidden md:block cursor-pointer">
                         <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">Get Started</Button>
                     </div>
+                    </Link>
 
                     <div className="md:hidden">
                         <button
