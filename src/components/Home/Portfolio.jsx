@@ -30,32 +30,32 @@ import {
   Instagram,
 } from "lucide-react"
 function Portfolio() {
-      const portfolio = [
-    {
-      title: "E-commerce Platform",
-      category: "Web Development",
-      image: "/placeholder.svg?height=300&width=400",
-      description: "Modern e-commerce solution with advanced features",
-    },
-    {
-      title: "Banking App",
-      category: "Mobile App",
-      image: "/placeholder.svg?height=300&width=400",
-      description: "Secure mobile banking application with biometric authentication",
-    },
-    {
-      title: "SaaS Dashboard",
-      category: "UI/UX Design",
-      image: "/placeholder.svg?height=300&width=400",
-      description: "Clean and intuitive dashboard for data visualization",
-    },
-    {
-      title: "Brand Identity",
-      category: "Branding",
-      image: "/placeholder.svg?height=300&width=400",
-      description: "Complete brand identity design for tech startup",
-    },
-  ]
+ const portfolio = [
+  {
+    title: "Smart Home Services & Retail App",
+    category: "Mobile App Development",
+    image: "https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumKoCxzD0DQkEFIRNZ5MqBjLvotuhOKYrSbUGT", // Replace with screenshot of the app
+    description: "Developed a comprehensive mobile application for electric items, enabling users to book repair services for TVs, ACs, and CCTVs, as well as purchase new products, all within one intuitive platform.",
+  },
+  {
+    title: "Dynamic Community Engagement Portal",
+    category: "Web Development",
+    image: "https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumnTve33A1z8WShHVuacLDIv5XR0itPqOklGMb", // Replace with screenshot of community website
+    description: "Crafted a robust web platform designed to foster community interaction, facilitate event organization, and enhance member communication for a vibrant local group.",
+  },
+  {
+    title: "Logistics & Transport Company Website",
+    category: "Web Development",
+    image: "https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAum6vClSkOFtYkXDQV3xwMmdzE6iugCS4bW9e72", // Replace with screenshot of transport company website
+    description: "Designed and developed a professional and efficient website for a transport company, focusing on streamlined service inquiries, tracking, and company information.",
+  },
+  {
+    title: "Comprehensive Brand Identity Development",
+    category: "Branding / Graphic Design",
+    image: "https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumRcZjHr6mu2iQAmoaFD3d9eMskP7J6LXV4IRl", // Replace with a collage or mockups of various branding projects
+    description: "Delivered cohesive branding solutions for a diverse range of clients, including educational institutions, innovative startups, and specialty cafes, establishing strong and memorable visual identities.",
+  },
+];
   return (
     <div className='min-h-screen bg-white '>
        <section id="portfolio" className="py-20 bg-white w-full">

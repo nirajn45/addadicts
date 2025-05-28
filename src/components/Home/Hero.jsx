@@ -170,7 +170,7 @@ function Hero() {
                   variant="outline"
                   className="border-gray-300 hover:bg-white text-gray-700"
                 >
-                  <Link href="/portfolio">
+                  <Link href="#portfolio">
                     View Work
                   </Link>
                 </Button>

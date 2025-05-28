@@ -475,13 +475,14 @@ export default function Process() {
             </p>
           </div>
 
+          <a href="/contact/#form">
           <button
-            className="px-5 py-2.5 rounded-lg text-sm font-medium text-white shadow-sm transition-colors hover:shadow-md hover:opacity-90 flex items-center gap-2 group"
+            className="px-5 cursor-pointer py-2.5 rounded-lg text-sm font-medium text-white shadow-sm transition-colors hover:shadow-md hover:opacity-90 flex items-center gap-2 group"
             style={{ backgroundColor: primaryColor }}
           >
             Schedule a Consultation
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
+          </button></a>
         </div>
       </section>
       

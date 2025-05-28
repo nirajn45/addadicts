@@ -77,7 +77,7 @@ export default function Contact() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "hello@adaddictz.com",
+      value: "info@adaddictz.com",
       description: "Send us an email anytime",
     },
     {
@@ -89,7 +89,7 @@ export default function Contact() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Office",
-      value: "123 Business Street",
+      value: "Patiala, Punjab, India",
       description: "San Francisco, CA 94102",
     },
     {
@@ -323,14 +323,14 @@ export default function Contact() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-black mb-4">Visit Our Office</h2>
             <p className="text-lg text-gray-600">
-              Located in the heart of San Francisco, we're always happy to meet in person.
+              Located in the heart of India, we're always happy to meet in person.
             </p>
           </div>
 
           <Card className="border-0 overflow-hidden">
             <div className="rounded-xl overflow-hidden shadow-lg h-[460px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.33982735148!2d-87.8720468!3d41.8339041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c3cd0f4cbed%3A0xafe0a6ad09c0c000!2sChicago%2C%20IL!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104729.20716624179!2d76.32665229799521!3d30.346629314865677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391028935a3313df%3A0xd5bc56ad3b90bc7f!2sPatiala%2C%20Punjab!5e1!3m2!1sen!2sin!4v1748464812691!5m2!1sen!2sin"
                 style={{ border: 0 }}
                 width="100%"
                 height="100%"

@@ -80,7 +80,7 @@ function Hero() {
                         <MapPin className="w-6 h-6 text-emerald-500" />
                         <div>
                             <div className="font-semibold text-gray-900 text-sm">Location</div>
-                            <div className="text-xs text-gray-500">123 Main St, City, Country</div>
+                            <div className="text-xs text-gray-500">Patiala Punjab, India</div>
                         </div>
                     </div>
                 </motion.div>

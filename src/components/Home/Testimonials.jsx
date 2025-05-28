@@ -23,106 +23,82 @@ const colors = {
 };
 
 const testimonialData = {
-  students: [
+  webAndAppDevelopment: [
     {
-      name: "Ronit JaiPrakash",
-      role: "Application Developer, Caelius Consultancy",
+      name: "Ronit Prakash", // Client Name
+      role: "Operations Director", // Adjusted role for a client
       image: "https://media.licdn.com/dms/image/v2/D5603AQFewlI7VW09Fg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708280686326?e=1750896000&v=beta&t=0R4Hv32FtHwwVjasXKxKdfRdrRIjmG-WsS3WtPzXrbk",
-      testimonial: "The Uniques Community provided me with the skills and connections to launch my career as a Full Stack Developer. The mentorship I received was invaluable in helping me secure my role at Caelius Consultancy.",
+      testimonial: "The web application [Your Agency Name] developed for our transport company has revolutionized our booking and tracking system. It's incredibly robust and user-friendly, streamlining our entire operation.",
       rating: 5,
-      highlight: "MERN Stack Expert"
+      highlight: "Transformative Web Solutions"
     },
     {
-      name: "Naveen Jaiswal",
-      role: "Software Developer, Thor Solutions",
+      name: "Naveen Jaiswal", // Client Name
+      role: "Manager", // Adjusted role for a client
       image: "https://media.licdn.com/dms/image/v2/D5603AQHVwXFQ1mWrtA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1710089176344?e=1750896000&v=beta&t=aHOisuhFveYFq6GRDuF14B0vIfq5DvWZAgTK0zK_qQU",
-      testimonial: "Through the practical projects and industry-focused training at The Uniques, I developed the technical expertise needed to excel in my role developing product customization platforms.",
+      testimonial: "Our new mobile app for electric item services and sales is a huge success, thanks to [Your Agency Name]. The functionality is flawless, and it has significantly boosted our customer engagement.",
       rating: 5,
-      highlight: "Product Development"
+      highlight: "Innovative Mobile App"
     },
     {
-      name: "Parveen Jaiswal",
-      role: "Web Developer, SpacePepper Studios",
+      name: "Parveen Jaiswal", // Client Name
+      role: "Community Lead", // Adjusted role for a client
       image: "https://media.licdn.com/dms/image/v2/D5603AQFnP2LqKHK4Tg/profile-displayphoto-shrink_400_400/B56ZXRMoqbGsAk-/0/1742971506111?e=1750896000&v=beta&t=YpcZyttRFoUJDxr-s0uaEkHz7azUendwExwEos5ITXQ",
-      testimonial: "As an MCD Level-1 certified developer, I can attribute much of my success to the guidance and opportunities provided by The Uniques Community. They helped transform my passion into expertise.",
+      testimonial: "The community engagement platform built by [Your Agency Name] has truly connected our members. Its intuitive design and powerful features have made a huge difference.",
       rating: 5,
-      highlight: "MCD Certified"
-    },
-    // {
-    //   name: "Mantasha Tabassum",
-    //   role: "Application Developer, Caelius Consulting",
-    //   image: "https://media.licdn.com/dms/image/v2/D4D03AQElXzWUBeGTYA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1697386293419?e=1750896000&v=beta&t=fHVOQ0t1DJ3-zImyPe3Z6ELvu4bIrcxbJJs3oJuZVtg",
-    //   testimonial: "The Uniques Community gave me the confidence and AWS expertise I needed to implement cloud solutions and optimize infrastructure. Their hands-on approach truly made the difference.",
-    //   rating: 5,
-    //   highlight: "AWS Specialist"
-    // }
-  ],
-  faculty: [
-    {
-      name: "Dr. Rajesh Sharma",
-      role: "Professor of Computer Science, IIT Delhi",
-      image: "https://randomuser.me/api/portraits/men/42.jpg",
-      testimonial: "The curriculum designed by The Uniques Community bridges the gap between academic learning and industry requirements perfectly. My students who engage with their programs consistently perform better in real-world applications.",
-      rating: 5,
-      highlight: "Industry Alignment"
-    },
-    {
-      name: "Prof. Anita Desai",
-      role: "Head of IT Department, Delhi University",
-      image: "https://randomuser.me/api/portraits/women/45.jpg",
-      testimonial: "I've witnessed a remarkable transformation in students who participate in The Uniques programs. Their confidence, technical skills, and problem-solving abilities show significant improvement.",
-      rating: 5,
-      highlight: "Skill Enhancement"
-    },
-    // {
-    //   name: "Dr. Vikram Mehta",
-    //   role: "Dean of Engineering, Chandigarh University",
-    //   image: "https://randomuser.me/api/portraits/men/32.jpg",
-    //   testimonial: "The Uniques Community's approach to practical learning complements our academic curriculum perfectly. Their industry connections provide our students with invaluable networking opportunities.",
-    //   rating: 5,
-    //   highlight: "Practical Approach"
-    // },
-    {
-      name: "Prof. Sunita Patel",
-      role: "Director of Placements, Panjab University",
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
-      testimonial: "Companies actively seek out students who have trained with The Uniques Community. Their program significantly enhances our placement statistics and student career outcomes.",
-      rating: 5,
-      highlight: "Enhanced Placements"
+      highlight: "Engaging Platform Development"
     }
   ],
-  professionals: [
+  brandingAndDesign: [
     {
-      name: "Amit Kumar",
-      role: "CTO, TechForward Solutions",
-      image: "https://randomuser.me/api/portraits/men/22.jpg",
-      testimonial: "The graduates from The Uniques Community join our team with a solid foundation in both technical skills and professional attitude. Their training clearly emphasizes real-world problem solving.",
+      name: "Amit Kumar", // Client Name
+      role: "Director", // Adjusted role for a client
+      image: "https://randomuser.me/api/portraits/men/22.jpg", // Kept randomuser as it was in original 'digitalMarketing'
+      testimonial: "[Your Agency Name] completely revamped our institution's branding. Their creative vision and graphic design expertise gave us a fresh, modern identity that truly stands out.",
       rating: 5,
-      highlight: "Industry Ready"
+      highlight: "Exceptional Brand Refresh"
     },
     {
-      name: "Priya Sharma",
-      role: "Engineering Manager, Microsoft India",
-      image: "https://randomuser.me/api/portraits/women/29.jpg",
-      testimonial: "We've hired multiple developers trained by The Uniques, and they consistently demonstrate strong coding practices and teamwork. Their preparation for the industry is exceptional.",
+      name: "Priya Sharma", // Client Name
+      role: "Marketing Head", // Adjusted role for a client
+      image: "https://randomuser.me/api/portraits/women/29.jpg", // Kept randomuser as it was in original 'digitalMarketing'
+      testimonial: "The team at [Your Agency Name] delivered stunning branding for our cafe, from our logo to our menu designs. Their attention to detail and artistic flair are unmatched.",
       rating: 5,
-      highlight: "Team Players"
+      highlight: "Captivating Cafe Branding"
     },
-    // {
-    //   name: "Rahul Verma",
-    //   role: "Lead Developer, Amazon Web Services",
-    //   image: "https://randomuser.me/api/portraits/men/36.jpg",
-    //   testimonial: "The Uniques Community produces developers who understand not just coding, but the entire software development lifecycle. This makes them valuable assets to any tech team.",
-    //   rating: 4,
-    //   highlight: "Full Lifecycle Skills"
-    // },
     {
-      name: "Neha Gupta",
-      role: "Hiring Manager, Google",
-      image: "https://randomuser.me/api/portraits/women/65.jpg",
-      testimonial: "I'm always impressed by candidates from The Uniques Community. They demonstrate both technical excellence and the soft skills essential for success in collaborative environments.",
+      name: "Neha Gupta", // Client Name
+      role: "Founder", // Adjusted role for a client
+      image: "https://randomuser.me/api/portraits/women/65.jpg", // Kept randomuser as it was in original 'digitalMarketing'
+      testimonial: "We needed a strong visual identity for our fencing company, and [Your Agency Name] exceeded our expectations. Their branding work perfectly captures our dynamic spirit.",
       rating: 5,
-      highlight: "Balanced Skillset"
+      highlight: "Dynamic Visual Identity"
+    }
+  ],
+  digitalMarketing: [ // New category for digital marketing focus
+    {
+      name: "Dr. Rajesh Sharma", // Client Name
+      role: "E-commerce Manager", // Adjusted role for a client
+      image: "https://randomuser.me/api/portraits/men/42.jpg", // Kept randomuser as it was in original 'brandingAndDesign'
+      testimonial: "The digital marketing strategies implemented by [Your Agency Name] have significantly boosted our online traffic and conversion rates. Their data-driven approach is truly impressive.",
+      rating: 5,
+      highlight: "Results-Driven Marketing"
+    },
+    {
+      name: "Prof. Anita Desai", // Client Name
+      role: "Startup Mentor", // Adjusted role for a client
+      image: "https://randomuser.me/api/portraits/women/45.jpg", // Kept randomuser as it was in original 'brandingAndDesign'
+      testimonial: "As a mentor, I often recommend [Your Agency Name] to startups. Their comprehensive digital marketing and branding services are essential for new businesses looking to establish a strong online presence.",
+      rating: 5,
+      highlight: "Strategic Digital Growth"
+    },
+    {
+      name: "Prof. Sunita Patel", // Client Name
+      role: "Client Relations Lead", // Adjusted role for a client
+      image: "https://randomuser.me/api/portraits/women/68.jpg", // Kept randomuser as it was in original 'brandingAndDesign'
+      testimonial: "Our collaboration with [Your Agency Name] on various digital campaigns has consistently yielded excellent results. Their understanding of market trends is top-notch.",
+      rating: 5,
+      highlight: "Market Insight & Execution"
     }
   ]
 };
@@ -171,8 +147,7 @@ const TestimonialCard = ({ image, name, role, testimonial, rating = 5, highlight
       
       <div className="flex items-center pt-4 border-t border-gray-100">
         <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-          <img
-            src={image}
+          <img src={image}
             alt={name}
             fill
             className="object-cover"
@@ -191,25 +166,25 @@ const TestimonialCard = ({ image, name, role, testimonial, rating = 5, highlight
 export default function Testimonials() {
   const [[page, direction], setPage] = useState([0, 0]);
   const [isAnimating, setIsAnimating] = useState(false);
-  const sections = ['students', 'faculty', 'professionals'];
+  const sections = ['webAndAppDevelopment', 'brandingAndDesign', 'digitalMarketing'];
   const activeSection = sections[page % sections.length];
   
   const sectionIcons = {
-    'students': <GraduationCap className="w-4 h-4" />,
-    'faculty': <Briefcase className="w-4 h-4" />,
-    'professionals': <Monitor className="w-4 h-4" />
+    'webAndAppDevelopment': <GraduationCap className="w-4 h-4" />,
+    'brandingAndDesign': <Briefcase className="w-4 h-4" />,
+    'digitalMarketing': <Monitor className="w-4 h-4" />
   };
   
   const sectionTitles = {
-    students: "Student Success Stories",
-    faculty: "Faculty Perspectives",
-    professionals: "Industry Recognition"
+    webAndAppDevelopment: "Student Success Stories",
+    brandingAndDesign: "brandingAndDesign Perspectives",
+    digitalMarketing: "Industry Recognition"
   };
 
   const sectionDescriptions = {
-    students: "Hear from our alumni who have successfully launched their careers through our programs",
-    faculty: "Academic professionals share their insights on the impact of our training",
-    professionals: "Industry leaders discuss the quality and preparedness of our graduates"
+    webAndAppDevelopment: "Hear from our alumni who have successfully launched their careers through our programs",
+    brandingAndDesign: "Academic digitalMarketing share their insights on the impact of our training",
+    digitalMarketing: "Industry leaders discuss the quality and preparedness of our graduates"
   };
 
   // Auto-rotate testimonials

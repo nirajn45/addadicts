@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react";
 import {
   CheckCircle,
   FileSearch,
@@ -14,85 +14,87 @@ import {
   Award,
   Calendar,
   MapPin,
-} from "lucide-react"
+} from "lucide-react";
 
 export default function Process() {
-  const [activeStep, setActiveStep] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-  const [developerVisible, setDeveloperVisible] = useState(false)
-  const waveRef = useRef(null)
-  const developerRef = useRef(null)
+  const [activeStep, setActiveStep] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [developerVisible, setDeveloperVisible] = useState(false);
+  const waveRef = useRef(null);
+  const developerRef = useRef(null);
 
   useEffect(() => {
     // Check if we're on mobile
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
+      setIsMobile(window.innerWidth < 768);
+    };
 
     // Initial check
-    checkMobile()
+    checkMobile();
 
     // Set up resize listener
-    window.addEventListener("resize", checkMobile)
+    window.addEventListener("resize", checkMobile);
 
     // Set visibility for animations
-    setIsVisible(true)
+    setIsVisible(true);
 
     // Auto-rotate steps
     const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % steps.length)
-    }, 6000)
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 6000);
 
     // Intersection Observer for developer section
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setDeveloperVisible(true)
+          setDeveloperVisible(true);
         }
       },
-      { threshold: 0.3 },
-    )
+      { threshold: 0.3 }
+    );
 
     if (developerRef.current) {
-      observer.observe(developerRef.current)
+      observer.observe(developerRef.current);
     }
 
     // Cleanup
     return () => {
-      clearInterval(interval)
-      window.removeEventListener("resize", checkMobile)
-      observer.disconnect()
-    }
-  }, [])
+      clearInterval(interval);
+      window.removeEventListener("resize", checkMobile);
+      observer.disconnect();
+    };
+  }, []);
 
   // Scroll to active card on mobile
   useEffect(() => {
-     if (isMobile && waveRef.current) {
-    // Check if the waveRef is visible in viewport
-    const rect = waveRef.current.getBoundingClientRect();
-    const inView =
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+    if (isMobile && waveRef.current) {
+      // Check if the waveRef is visible in viewport
+      const rect = waveRef.current.getBoundingClientRect();
+      const inView =
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth);
 
-    if (inView) {
-      const cards = waveRef.current.querySelectorAll(".step-card");
-      if (cards[activeStep]) {
-        cards[activeStep].scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "center",
-        });
+      if (inView) {
+        const cards = waveRef.current.querySelectorAll(".step-card");
+        if (cards[activeStep]) {
+          cards[activeStep].scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
       }
     }
-  }
-}, [activeStep, isMobile]);
+  }, [activeStep, isMobile]);
 
-  const primaryColor = "#10b981" // Emerald-500
-  const secondaryColor = "#d1fae5" // Emerald-100
-  const darkColor = "#1f2937" // Gray-800
+  const primaryColor = "#10b981"; // Emerald-500
+  const secondaryColor = "#d1fae5"; // Emerald-100
+  const darkColor = "#1f2937"; // Gray-800
 
   const steps = [
     {
@@ -127,7 +129,7 @@ export default function Process() {
       icon: <Rocket className="w-5 h-5" />,
       color: primaryColor,
     },
-  ]
+  ];
 
   const skills = [
     { name: "React/Next.js", level: 95 },
@@ -136,7 +138,7 @@ export default function Process() {
     { name: "Python", level: 85 },
     { name: "AWS/Cloud", level: 82 },
     { name: "UI/UX Design", level: 78 },
-  ]
+  ];
 
   return (
     <div className="w-full bg-gradient-to-br from-gray-50 to-white">
@@ -156,15 +158,21 @@ export default function Process() {
             Our <span style={{ color: primaryColor }}>Strategic Process</span>
           </h2>
           <p className="max-w-2xl mx-auto text-gray-600 ">
-            A structured approach to delivering measurable business outcomes through technology excellence
+            A structured approach to delivering measurable business outcomes
+            through technology excellence
           </p>
         </header>
 
         {/* Mobile View: Horizontal Scrolling Cards */}
         <div
-          className={`md:hidden relative mb-8 ${isVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-700`}
+          className={`md:hidden relative mb-8 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          } transition-opacity duration-700`}
         >
-          <div ref={waveRef} className="flex overflow-x-auto pb-8 pt-4 px-4 -mx-4 snap-x snap-mandatory hide-scrollbar">
+          <div
+            ref={waveRef}
+            className="flex overflow-x-auto pb-8 pt-4 px-4 -mx-4 snap-x snap-mandatory hide-scrollbar"
+          >
             {steps.map((step, index) => (
               <div
                 key={step.id}
@@ -175,7 +183,9 @@ export default function Process() {
               >
                 <div
                   className={`bg-white rounded-lg shadow-md overflow-hidden border-2 transition-all duration-300 h-full ${
-                    activeStep === index ? "border-emerald-400" : "border-transparent"
+                    activeStep === index
+                      ? "border-emerald-400"
+                      : "border-transparent"
                   }`}
                   onClick={() => setActiveStep(index)}
                 >
@@ -187,7 +197,9 @@ export default function Process() {
                     >
                       {step.id}
                     </div>
-                    <h3 className="text-base font-bold text-gray-900">{step.title}</h3>
+                    <h3 className="text-base font-bold text-gray-900">
+                      {step.title}
+                    </h3>
                   </div>
 
                   {/* Card Content */}
@@ -200,11 +212,16 @@ export default function Process() {
                     <div className="flex items-center">
                       <span
                         className="w-6 h-6 rounded-full flex items-center justify-center mr-2"
-                        style={{ backgroundColor: `${primaryColor}15`, color: primaryColor }}
+                        style={{
+                          backgroundColor: `${primaryColor}15`,
+                          color: primaryColor,
+                        }}
                       >
                         {step.icon}
                       </span>
-                      <span className="text-xs font-medium text-gray-500">Phase {step.id}</span>
+                      <span className="text-xs font-medium text-gray-500">
+                        Phase {step.id}
+                      </span>
                     </div>
 
                     <div
@@ -247,7 +264,13 @@ export default function Process() {
               xmlns="http://www.w3.org/2000/svg"
             >
               {/* Shadow effect for the wave */}
-              <filter id="wave-shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <filter
+                id="wave-shadow"
+                x="-20%"
+                y="-20%"
+                width="140%"
+                height="140%"
+              >
                 <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
                 <feOffset dx="0" dy="2" result="offsetblur" />
                 <feComponentTransfer>
@@ -277,7 +300,9 @@ export default function Process() {
                 strokeLinecap="round"
                 strokeDasharray="1500"
                 strokeDashoffset="1500"
-                className={`wave-path-progress ${isVisible ? "animate-wave-dash" : ""}`}
+                className={`wave-path-progress ${
+                  isVisible ? "animate-wave-dash" : ""
+                }`}
               />
 
               {/* Dotted line effect following the same path */}
@@ -295,11 +320,11 @@ export default function Process() {
             <div className="absolute ml-40 top-0 w-full h-full">
               {steps.map((step, index) => {
                 // Calculate positions along the wave for 4 cards
-                const xPercent = (index / (steps.length - 1)) * 75
+                const xPercent = (index / (steps.length - 1)) * 75;
 
                 // Alternate cards above and below the wave
-                const isAbove = index % 2 === 0
-                const yPosition = isAbove ? "-60%" : "60%"
+                const isAbove = index % 2 === 0;
+                const yPosition = isAbove ? "-60%" : "60%";
 
                 return (
                   <div
@@ -313,7 +338,6 @@ export default function Process() {
                       transform: "translateX(-50%)",
                       opacity: isVisible ? 1 : 0,
                       transitionDelay: `${index * 150}ms`,
-                     
                     }}
                   >
                     {/* Card */}
@@ -323,7 +347,10 @@ export default function Process() {
                       }`}
                       style={{
                         borderColor: primaryColor,
-                        boxShadow: activeStep === index ? `0 8px 20px -5px ${primaryColor}40` : "",
+                        boxShadow:
+                          activeStep === index
+                            ? `0 8px 20px -5px ${primaryColor}40`
+                            : "",
                       }}
                       onClick={() => setActiveStep(index)}
                     >
@@ -335,12 +362,16 @@ export default function Process() {
                         >
                           {step.id}
                         </div>
-                        <h3 className="text-base font-bold text-gray-900">{step.title}</h3>
+                        <h3 className="text-base font-bold text-gray-900">
+                          {step.title}
+                        </h3>
                       </div>
 
                       {/* Card Content */}
                       <div className="p-3">
-                        <p className="text-gray-600 text-xs sm:text-sm">{step.description}</p>
+                        <p className="text-gray-600 text-xs sm:text-sm">
+                          {step.description}
+                        </p>
                       </div>
 
                       {/* Card Footer */}
@@ -348,11 +379,16 @@ export default function Process() {
                         <div className="flex items-center">
                           <span
                             className="w-6 h-6 rounded-full flex items-center justify-center mr-2"
-                            style={{ backgroundColor: `${primaryColor}15`, color: primaryColor }}
+                            style={{
+                              backgroundColor: `${primaryColor}15`,
+                              color: primaryColor,
+                            }}
                           >
                             {step.icon}
                           </span>
-                          <span className="text-xs font-medium text-gray-500">Phase {step.id}</span>
+                          <span className="text-xs font-medium text-gray-500">
+                            Phase {step.id}
+                          </span>
                         </div>
 
                         <div
@@ -386,7 +422,7 @@ export default function Process() {
                       }}
                     ></div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -395,10 +431,15 @@ export default function Process() {
         {/* Active Step Detail Card */}
         <div
           className={`max-w-3xl mx-auto mt-8 md:mt-40 transition-all duration-500 ${
-            isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-10"
+            isVisible
+              ? "opacity-100 transform translate-y-0"
+              : "opacity-0 transform translate-y-10"
           }`}
         >
-          <div className="bg-white rounded-lg shadow-lg border overflow-hidden" style={{ borderColor: primaryColor }}>
+          <div
+            className="bg-white rounded-lg shadow-lg border overflow-hidden"
+            style={{ borderColor: primaryColor }}
+          >
             <div className="md:flex">
               <div className="md:w-2/5 h-48 md:h-auto relative bg-gradient-to-br from-emerald-50 to-emerald-100">
                 <div
@@ -427,14 +468,22 @@ export default function Process() {
                   >
                     {steps[activeStep].id}
                   </span>
-                  <h3 className="text-lg font-bold text-gray-900">{steps[activeStep].title}</h3>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {steps[activeStep].title}
+                  </h3>
                 </div>
-                <p className="text-gray-600 text-sm">{steps[activeStep].description}</p>
+                <p className="text-gray-600 text-sm">
+                  {steps[activeStep].description}
+                </p>
 
                 <div className="mt-5 flex justify-between items-center">
                   <button
                     className="px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1 border hover:bg-gray-50 transition-colors"
-                    onClick={() => setActiveStep((prev) => (prev - 1 + steps.length) % steps.length)}
+                    onClick={() =>
+                      setActiveStep(
+                        (prev) => (prev - 1 + steps.length) % steps.length
+                      )
+                    }
                   >
                     <ChevronLeft className="w-3 h-3" />
                     Previous
@@ -445,7 +494,9 @@ export default function Process() {
                       <button
                         key={idx}
                         className={`w-2.5 h-2.5 rounded-full transition-all ${
-                          activeStep === idx ? "bg-emerald-500" : "bg-gray-300 hover:bg-gray-400"
+                          activeStep === idx
+                            ? "bg-emerald-500"
+                            : "bg-gray-300 hover:bg-gray-400"
                         }`}
                         onClick={() => setActiveStep(idx)}
                         aria-label={`Go to step ${idx + 1}`}
@@ -456,7 +507,9 @@ export default function Process() {
                   <button
                     className="px-3 py-1.5 rounded-lg text-xs font-medium text-white shadow-sm transition-colors flex items-center gap-1 hover:opacity-90"
                     style={{ backgroundColor: primaryColor }}
-                    onClick={() => setActiveStep((prev) => (prev + 1) % steps.length)}
+                    onClick={() =>
+                      setActiveStep((prev) => (prev + 1) % steps.length)
+                    }
                   >
                     Next
                     <ChevronRight className="w-3 h-3" />
@@ -470,23 +523,26 @@ export default function Process() {
         <div className="flex flex-col items-center mt-10">
           <div className="text-center max-w-2xl mb-6">
             <p className="text-gray-700 text-sm md:text-base">
-              Our methodology has been refined through years of experience delivering enterprise solutions across
-              industries. Each phase is carefully designed to maximize value and minimize risk.
+              Our methodology has been refined through years of experience
+              delivering enterprise solutions across industries. Each phase is
+              carefully designed to maximize value and minimize risk.
             </p>
           </div>
 
-          <button
-            className="px-5 py-2.5 rounded-lg text-sm font-medium text-white shadow-sm transition-colors hover:shadow-md hover:opacity-90 flex items-center gap-2 group"
-            style={{ backgroundColor: primaryColor }}
-          >
-            Schedule a Consultation
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
+          <a href="/contact/#form">
+            <button
+              className="px-5 py-2.5 cursor-pointer rounded-lg text-sm font-medium text-white shadow-sm transition-colors hover:shadow-md hover:opacity-90 flex items-center gap-2 group"
+              style={{ backgroundColor: primaryColor }}
+            >
+              Schedule a Consultation
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </a>
         </div>
       </section>
-      
+
       {/* Developer Profile Section */}
-       {/* Developer Profile Section */}
+      {/* Developer Profile Section */}
       <section
         ref={developerRef}
         className="w-11/12 mx-auto h-auto relative overflow-hidden bg-white flex items-center py-5"
@@ -505,75 +561,91 @@ export default function Process() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 h-full items-center">
               {/* Left Side - Image with One Card */}
-             
-  {/* Left Side - Image with One Card */}
-  <div
-    className={`transition-all duration-1000 flex items-center justify-center ${developerVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
-    // Make left side take full height of right side content
-    style={{ height: "100%" }}
-  >
-    <div className="relative flex items-center h-full w-full">
-      {/* Main Profile Image */}
-     <div className="relative w-full max-w-[350px] aspect-[3/4] flex items-center">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-3xl rotate-3 opacity-50"></div>
-          <img
-            src="/placeholder.svg?height=288&width=288"
-            alt="Lead Developer"
-            className="relative w-full h-full object-cover rounded-3xl shadow-2xl border-4 border-white"
-          />
 
-        {/* Single Card - Experience */}
-        <div className="absolute -top-3 -right-3 bg-white rounded-xl shadow-lg p-3 border border-emerald-100 animate-float">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
-              <Code className="w-4 h-4 text-emerald-600" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">8+ Years</p>
-              <p className="text-xs text-gray-500">Experience</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+              {/* Left Side - Image with One Card */}
+              <div
+                className={`transition-all duration-1000 flex items-center justify-center ${
+                  developerVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-10"
+                }`}
+                // Make left side take full height of right side content
+                style={{ height: "100%" }}
+              >
+                <div className="relative flex items-center h-full w-full">
+                  {/* Main Profile Image */}
+                  <div className="relative w-full max-w-[350px] aspect-[3/4] flex items-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-3xl rotate-3 opacity-50"></div>
+                    <img
+                      src="https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumIDzjDWxR21jqluvKkFoRaDpPfCGTtxewIs74"
+                      alt="Lead Developer"
+                      className="relative w-full h-full object-cover rounded-3xl shadow-2xl border-4 border-white"
+                    />
+
+                    {/* Single Card - Experience */}
+                    <div className="absolute -top-3 -right-3 bg-white rounded-xl shadow-lg p-3 border border-emerald-100 animate-float">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Code className="w-4 h-4 text-emerald-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-gray-900">
+                            3+ Years
+                          </p>
+                          <p className="text-xs text-gray-500">Experience</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* Right Side - All Content Compact */}
               <div
-                className={`transition-all duration-1000 delay-300 h-full flex flex-col justify-center ${developerVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+                className={`transition-all duration-1000 delay-300 h-full flex flex-col justify-center ${
+                  developerVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-10"
+                }`}
               >
                 <div className="space-y-6 max-h-full overflow-y-auto pr-4">
                   {/* Header */}
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">Niraj Gupta</h3>
-                    <p className="text-lg text-emerald-600 font-semibold mb-2">Senior Full-Stack Developer</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                      Niraj Gupta
+                    </h3>
+                    <p className="text-lg text-emerald-600 font-semibold mb-2">
+                      Full-Stack Web & App Developer
+                    </p>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      Passionate about creating scalable web applications with 8+ years of experience in modern
-                      JavaScript frameworks, cloud architecture, and user experience design.
+                      Passionate about creating scalable web applications with
+                      8+ years of experience in modern JavaScript frameworks,
+                      cloud architecture, and user experience design.
                     </p>
                   </div>
 
                   {/* Skills Section - Compact */}
                   <div>
-  <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-    <Code className="w-4 h-4 text-emerald-600" />
-    Skills
-  </h4>
-  <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
-    {skills.map((skill, index) => (
-      <div
-        key={skill.name}
-        className="flex items-center gap-2 bg-transparent p-0 m-0"
-      >
-        <span className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-emerald-500 bg-white">
-          <CheckCircle className="w-3 h-3 text-emerald-500" />
-        </span>
-        <span className="text-gray-900 text-xs font-medium">{skill.name}</span>
-      </div>
-    ))}
-  </div>
-</div>
+                    <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+                      <Code className="w-4 h-4 text-emerald-600" />
+                      Skills
+                    </h4>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
+                      {skills.map((skill, index) => (
+                        <div
+                          key={skill.name}
+                          className="flex items-center gap-2 bg-transparent p-0 m-0"
+                        >
+                          <span className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-emerald-500 bg-white">
+                            <CheckCircle className="w-3 h-3 text-emerald-500" />
+                          </span>
+                          <span className="text-gray-900 text-xs font-medium">
+                            {skill.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
                   {/* Projects Section - Compact */}
                   <div>
@@ -585,20 +657,22 @@ export default function Process() {
                       {[
                         {
                           title: "E-Commerce Platform",
-                          description: "Full-stack solution with React, Node.js, MongoDB",
+                          description:
+                            "Full-stack solution with React, Node.js, MongoDB",
                           tech: ["React", "Node.js"],
                         },
                         {
                           title: "Healthcare Dashboard",
-                          description: "Real-time analytics with advanced visualization",
+                          description:
+                            "Real-time analytics with advanced visualization",
                           tech: ["Vue.js", "Python"],
                         },
                         {
                           title: "Mobile Banking App",
-                          description: "Secure banking with biometric authentication",
+                          description:
+                            "Secure banking with biometric authentication",
                           tech: ["React Native", "AWS"],
                         },
-                        
                       ].map((project, index) => (
                         <div
                           key={project.title}
@@ -607,8 +681,12 @@ export default function Process() {
                           <div className="h-16 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-md mb-2 flex items-center justify-center">
                             <Code className="w-6 h-6 text-emerald-600" />
                           </div>
-                          <h5 className="font-semibold text-gray-900 text-xs mb-1">{project.title}</h5>
-                          <p className="text-gray-600 text-xs mb-2 line-clamp-2">{project.description}</p>
+                          <h5 className="font-semibold text-gray-900 text-xs mb-1">
+                            {project.title}
+                          </h5>
+                          <p className="text-gray-600 text-xs mb-2 line-clamp-2">
+                            {project.description}
+                          </p>
                           <div className="flex flex-wrap gap-1">
                             {project.tech.map((tech) => (
                               <span
@@ -642,7 +720,7 @@ export default function Process() {
                           title: "Mentor of the Year",
                           description: "Mentored 15+ developers",
                         },
-                        
+
                         {
                           icon: <Rocket className="w-5 h-5 text-emerald-600" />,
                           title: "Innovation Award",
@@ -658,8 +736,12 @@ export default function Process() {
                               {achievement.icon}
                             </div>
                             <div className="min-w-0">
-                              <h5 className="font-semibold text-gray-900 text-xs mb-1">{achievement.title}</h5>
-                              <p className="text-gray-600 text-xs">{achievement.description}</p>
+                              <h5 className="font-semibold text-gray-900 text-xs mb-1">
+                                {achievement.title}
+                              </h5>
+                              <p className="text-gray-600 text-xs">
+                                {achievement.description}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -669,11 +751,17 @@ export default function Process() {
 
                   {/* Contact CTA - Compact */}
                   <div className="pt-2">
-                    <button className="w-full mb-4 px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 text-sm group">
-                      <User className="w-4 h-4" />
-                      Connect with Alex
-                      <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    <a
+                      href="https://www.linkedin.com/in/niraj-gupta-04b3ba255/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="w-full mb-4 cursor-pointer px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 text-sm group">
+                        <User className="w-4 h-4" />
+                        Connect with Niraj
+                        <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -686,23 +774,25 @@ export default function Process() {
         .wave-path-bg {
           animation: float 8s ease-in-out infinite;
         }
-        
+
         .wave-path-dots {
           animation: float 8s ease-in-out infinite reverse;
         }
-        
+
         .animate-wave-dash {
-          animation: dash 2.5s ease-in-out forwards, pulse 4s ease-in-out infinite;
+          animation: dash 2.5s ease-in-out forwards,
+            pulse 4s ease-in-out infinite;
         }
-        
+
         @keyframes dash {
           to {
             stroke-dashoffset: 0;
           }
         }
-        
+
         @keyframes pulse {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 1;
           }
           50% {
@@ -711,7 +801,8 @@ export default function Process() {
         }
 
         @keyframes float {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0);
           }
           50% {
@@ -746,18 +837,18 @@ export default function Process() {
             transform: translateY(0);
           }
         }
-        
+
         /* Hide scrollbar for Chrome, Safari and Opera */
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
         }
-        
+
         /* Hide scrollbar for IE, Edge and Firefox */
         .hide-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
         }
       `}</style>
     </div>
-  )
+  );
 }

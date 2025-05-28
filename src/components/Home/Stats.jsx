@@ -31,9 +31,9 @@ import {
 } from "lucide-react"
 function Stats() {
     const stats = [
-    { number: "150+", label: "Projects Completed" },
-    { number: "50+", label: "Happy Clients" },
-    { number: "5", label: "Years Experience" },
+    { number: "50+", label: "Projects Completed" },
+    { number: "20+", label: "Happy Clients" },
+    { number: "3", label: "Years Experience" },
     { number: "24/7", label: "Support Available" },
   ]
   return (

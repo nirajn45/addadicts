@@ -19,9 +19,9 @@ const inter = Raleway({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Addadictz | Innovative Technical Solutions for Your Business",
   description: "Empowering your business with trusted and comprehensive tech solutions — that's Addadictz.",
-  // icons: {
-  //   icon: "/favicon.ico",
-  // },
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

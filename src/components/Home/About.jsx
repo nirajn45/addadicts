@@ -28,32 +28,36 @@ import {
   Instagram,
 } from "lucide-react"
 function About() {
-   const team = [
-    {
-      name: "Alex Johnson",
-      role: "Creative Director",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "10+ years of experience in digital design and strategy",
-    },
-    {
-      name: "Sarah Chen",
-      role: "Lead Developer",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Full-stack developer specializing in modern web technologies",
-    },
-    {
-      name: "Mike Rodriguez",
-      role: "UX Designer",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "User experience expert with a passion for human-centered design",
-    },
-    {
-      name: "Emily Davis",
-      role: "Project Manager",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Agile project management specialist ensuring timely delivery",
-    },
-  ]
+  const about = [
+  {
+    name: "Our Vision",
+    role: "Driving Digital Innovation",
+    // Image of abstract technology or a future concept
+    image: "https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150061967.jpg?uid=R202189392&ga=GA1.1.997402308.1733712430&semt=ais_items_boosted&w=740",
+    bio: "Empowering businesses with cutting-edge digital solutions.",
+  },
+  {
+    name: "Our Mission",
+    role: "Client-Centric Solutions",
+    // Image showing a collaborative meeting or happy clients
+    image: "https://img.freepik.com/free-vector/live-collaboration-concept-illustration_114360-633.jpg?uid=R202189392&ga=GA1.1.997402308.1733712430&semt=ais_items_boosted&w=740",
+    bio: "Delivering tailored solutions that foster growth and build lasting relationships.",
+  },
+  {
+    name: "Our Expertise",
+    role: "Web, Graphic & Digital",
+    // Image representing a mix of digital skills (coding, design, marketing elements)
+    image: "https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg?uid=R202189392&ga=GA1.1.997402308.1733712430&semt=ais_items_boosted&w=740",
+    bio: "Specializing in web app development, graphic design, and digital marketing.",
+  },
+  {
+    name: "Our Approach",
+    role: "Collaborative & Transparent",
+    // Image showing a team working together or a clear process
+    image: "https://img.freepik.com/free-vector/team-concept-illustration_114360-688.jpg?uid=R202189392&ga=GA1.1.997402308.1733712430&semt=ais_items_boosted&w=740",
+    bio: "Working closely with clients to deliver projects on time and to high standards.",
+  },
+];
   return (
     <div className='min-h-screen bg-white '>
        <section id="about" className="py-20 bg-emerald-50">
@@ -65,7 +69,7 @@ function About() {
                       We're Passionate About Digital Excellence
                     </h2>
                     <p className="text-lg text-gray-600 mb-8">
-                      With over 5 years of experience, we've helped businesses of all sizes achieve their digital goals
+                      With over 3 years of experience, we've helped businesses of all sizes achieve their digital goals
                       through innovative design and development solutions.
                     </p>
       
@@ -105,13 +109,13 @@ function About() {
       
                   <div className="relative">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                      {team.map((member, index) => (
+                      {about.map((member, index) => (
                         <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0">
                           <CardContent className="px-4 ">
                             <img
                               src={member.image || "/placeholder.svg"}
                               alt={member.name}
-                              className="w-full h-28 object-cover rounded-lg mb-2 group-hover:scale-105 transition-transform duration-300"
+                              className="w-full h-28 !z-100 object-cover rounded-lg mb-2 group-hover:scale-105 transition-transform duration-300"
                             />
                             <h4 className="font-bold text-black text-sm">{member.name}</h4>
                             <p className="text-emerald-500 text-xs mb-2">{member.role}</p>

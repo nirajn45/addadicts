@@ -49,7 +49,16 @@ return (
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
                             <Link href="/">
-                                <span className="text-2xl font-bold text-emerald-500 cursor-pointer">Adaddictz</span>
+                                <div className="">
+                            <img
+                                src="https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumI1FFE6R21jqluvKkFoRaDpPfCGTtxewIs74z"
+                                alt="Adaddictz Logo"
+                                width={140}
+                                height={40}
+                                className="object-contain "
+                                priority
+                            />
+                        </div>
                             </Link>
                         </div>
                     </div>

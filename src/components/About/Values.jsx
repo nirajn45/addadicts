@@ -53,7 +53,7 @@ BWNDAiLz48L3N2Zz4=')]"></div>
           <Link href="/contact">
             <Button
               size="lg"
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg rounded-full shadow-lg transition-all flex items-center gap-2"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer px-8 py-4 text-lg rounded-full shadow-lg transition-all flex items-center gap-2"
             >
               Connect With Us
               <ArrowRight className="w-5 h-5" />

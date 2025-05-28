@@ -10,38 +10,38 @@ import Link from "next/link"
 function Journey() {
   const timeline = [
     {
-      year: "2019",
+       label: "Foundation",
       title: "The Beginning",
       description: "Started as a freelance developer with a vision to help small businesses go digital.",
       icon: <Lightbulb className="w-5 h-5 text-emerald-500" />
     },
     {
-      year: "2020",
-      title: "First Major Client",
+      label: "Growth Phase",
+      title: "Initial Partnerships & Milestones",
       description: "Landed our first enterprise client and delivered a complete digital transformation.",
       icon: <Target className="w-5 h-5 text-emerald-500" />
     },
     {
-      year: "2021",
-      title: "Team Expansion",
+      label: "Team Evolution",
+      title: "Expanding Our Collective Expertise",
       description: "Grew the team to include designers, developers, and marketing specialists.",
       icon: <Users className="w-5 h-5 text-emerald-500" />
     },
     {
-      year: "2022",
-      title: "100+ Projects",
+       label: "Project Success",
+      title: "Achieving Significant Project Volume",
       description: "Reached the milestone of 100 successful projects across various industries.",
       icon: <Badge className="bg-emerald-500 text-white">100+</Badge>
     },
     {
-      year: "2023",
-      title: "Award Recognition",
+      label: "Recognition", // Replaced 'year' with 'label'
+    title: "Industry Acknowledgement & Client Trust",
       description: "Received 'Best Digital Agency' award from the local business community.",
       icon: <Heart className="w-5 h-5 text-emerald-500" />
     },
     {
-      year: "2024",
-      title: "Global Reach",
+     label: "Future Forward", // Replaced 'year' with 'label'
+    title: "Expanding Our Global Footprint",
       description: "Expanded services globally, serving clients across 15+ countries.",
       icon: (
         <svg className="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none">
@@ -114,7 +114,7 @@ function Journey() {
               <Card className="border-0 bg-gray-50 hover:shadow-lg transition-shadow duration-300 h-full">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="text-2xl font-bold text-emerald-500">{item.year}</div>
+                    <div className="text-2xl font-bold text-emerald-500">{item.label}</div>
                     <div className="flex-1 h-px bg-emerald-100"></div>
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50">
                       {item.icon}

@@ -28,32 +28,62 @@ import {
   Instagram,
 } from "lucide-react"
 function About() {
-   const team = [
-    {
-      name: "Alex Johnson",
-      role: "Creative Director",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "10+ years of experience in digital design and strategy",
-    },
-    {
-      name: "Sarah Chen",
-      role: "Lead Developer",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Full-stack developer specializing in modern web technologies",
-    },
-    {
-      name: "Mike Rodriguez",
-      role: "UX Designer",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "User experience expert with a passion for human-centered design",
-    },
-    {
-      name: "Emily Davis",
-      role: "Project Manager",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Agile project management specialist ensuring timely delivery",
-    },
-  ]
+  //  const team = [
+  //   {
+  //     name: "Rahees Nagra",
+  //     role: "Creative Director",
+  //     image: "https://scontent.fixc14-1.fna.fbcdn.net/v/t39.30808-1/458327616_8718640654834912_7648174148667860625_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=zpJ6GG0mNsUQ7kNvwHMkL9E&_nc_oc=AdmjNmhL4O7cVaOVH5K79KIVg5EkogWe_mVhXsWdY8pmsTWlWejffajN8bMWcfTezd8&_nc_zt=24&_nc_ht=scontent.fixc14-1.fna&_nc_gid=oHSoiNdy7CB4Z8Zb-dbszg&oh=00_AfJSl4Q778JL6nj_vfVbQFJI3_ibls1W6yStdaKFjgj9lA&oe=683D472F",
+  //     bio: "10+ years of experience in digital design and strategy",
+  //   },
+  //   {
+  //     name: "Niraj Gupta",
+  //     role: "Lead Developer",
+  //     image: "https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumIDzjDWxR21jqluvKkFoRaDpPfCGTtxewIs74",
+  //     bio: "Full-stack developer specializing in modern web technologies",
+  //   },
+  //   {
+  //     name: "Mike Rodriguez",
+  //     role: "UX Designer",
+  //     image: "/placeholder.svg?height=300&width=300",
+  //     bio: "User experience expert with a passion for human-centered design",
+  //   },
+  //   {
+  //     name: "Emily Davis",
+  //     role: "Project Manager",
+  //     image: "/placeholder.svg?height=300&width=300",
+  //     bio: "Agile project management specialist ensuring timely delivery",
+  //   },
+  // ]
+  const about = [
+  {
+    name: "Our Vision",
+    role: "Driving Digital Innovation",
+    // Image of abstract technology or a future concept
+    image: "https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150061967.jpg?uid=R202189392&ga=GA1.1.997402308.1733712430&semt=ais_items_boosted&w=740",
+    bio: "Empowering businesses with cutting-edge digital solutions.",
+  },
+  {
+    name: "Our Mission",
+    role: "Client-Centric Solutions",
+    // Image showing a collaborative meeting or happy clients
+    image: "https://img.freepik.com/free-vector/live-collaboration-concept-illustration_114360-633.jpg?uid=R202189392&ga=GA1.1.997402308.1733712430&semt=ais_items_boosted&w=740",
+    bio: "Delivering tailored solutions that foster growth and build lasting relationships.",
+  },
+  {
+    name: "Our Expertise",
+    role: "Web, Graphic & Digital",
+    // Image representing a mix of digital skills (coding, design, marketing elements)
+    image: "https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg?uid=R202189392&ga=GA1.1.997402308.1733712430&semt=ais_items_boosted&w=740",
+    bio: "Specializing in web app development, graphic design, and digital marketing.",
+  },
+  {
+    name: "Our Approach",
+    role: "Collaborative & Transparent",
+    // Image showing a team working together or a clear process
+    image: "https://img.freepik.com/free-vector/team-concept-illustration_114360-688.jpg?uid=R202189392&ga=GA1.1.997402308.1733712430&semt=ais_items_boosted&w=740",
+    bio: "Working closely with clients to deliver projects on time and to high standards.",
+  },
+];
   return (
     <div className='min-h-screen bg-white '>
        <section id="about" className="py-20 bg-emerald-50">
@@ -105,7 +135,7 @@ function About() {
       
                   <div className="relative">
                     <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
-                      {team.map((member, index) => (
+                      {about.map((member, index) => (
                         <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0">
                           <CardContent className="px-4 ">
                             <img
