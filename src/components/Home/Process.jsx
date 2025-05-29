@@ -574,10 +574,10 @@ export default function Process() {
               >
                 <div className="relative flex items-center h-full w-full">
                   {/* Main Profile Image */}
-                  <div className="relative w-full max-w-[350px] aspect-[3/4] flex items-center">
+                  <div className="relative w-full max-w-[400px] aspect-[3/4] flex items-center">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-3xl rotate-3 opacity-50"></div>
                     <img
-                      src="https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumIDzjDWxR21jqluvKkFoRaDpPfCGTtxewIs74"
+                      src="https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumDgLWm8c3imC02hJzTjuAPrdk64eXYnEVlBgZ"
                       alt="Lead Developer"
                       className="relative w-full h-full object-cover rounded-3xl shadow-2xl border-4 border-white"
                     />
@@ -592,7 +592,7 @@ export default function Process() {
                           <p className="text-sm font-semibold text-gray-900">
                             3+ Years
                           </p>
-                          <p className="text-xs text-gray-500">Experience</p>
+                          <p className="text-xs text-gray-500">of Building Brands</p>
                         </div>
                       </div>
                     </div>
