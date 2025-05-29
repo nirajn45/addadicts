@@ -21,7 +21,7 @@ function page() {
       <Process/>
       <Technology/>
       <Faq/>
-      <Testimonials/>
+      {/* <Testimonials/> */}
 
 
     </div>
