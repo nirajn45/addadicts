@@ -7,7 +7,7 @@ import Faq from '@/components/Home/Faq'
 import Stats from '@/components/Home/Stats'
 import Portfolio from '@/components/Home/Portfolio'
 import Process from '@/components/Home/Process'
-import Testimonials from '@/components/Home/Testimonials'
+// import Testimonials from '@/components/Home/Testimonials'
 import Technology from '@/components/Home/Technology'
 function page() {
   return (
@@ -22,6 +22,8 @@ function page() {
       <Technology/>
       <Faq/>
       {/* <Testimonials/> */}
+
+
 
 
     </div>
