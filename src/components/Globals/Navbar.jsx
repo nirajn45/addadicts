@@ -50,8 +50,7 @@ return (
                         <div className="flex-shrink-0">
                             <Link href="/">
                                 <div className="">
-                            <img
-                                src="https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumI1FFE6R21jqluvKkFoRaDpPfCGTtxewIs74z"
+                            <img src="https://bmnmsbiymz.ufs.sh/f/1V3V2P4kpAumI1FFE6R21jqluvKkFoRaDpPfCGTtxewIs74z"
                                 alt="Adaddictz Logo"
                                 width={140}
                                 height={40}
